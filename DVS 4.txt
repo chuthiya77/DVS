@@ -1,0 +1,63 @@
+$mvn archetype:generate -DgroupId=com.example -DartifactId=HelloMaven
+-DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+$ls
+$cd HelloMaven
+$gedit pom.xml
+
+
+<dependencies>
+<dependency>
+<groupId>junit</groupId>
+<artifactId>junit</artifactId>
+<version>4.13.2</version>
+<scope>test</scope>
+</dependency>
+</dependencies>
+<build>
+<plugins>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-compiler-plugin</artifactId>
+<version>3.8.1</version>
+<configuration>
+<source>11</source>
+<target>11</target>
+</configuration>
+</plugin>
+</plugins>
+</build>
+</project>
+
+▪ mvn compile
+▪ mvn test
+▪ mvn package
+▪ ls target
+▪ java -cp target/HelloMaven-1.0-SNAPSHOT.jar com.example.App
+-------------------------------------------------------------------
+cd ft101
+$mkdir hellogroovy
+$cd hellogroovy
+$gradle init --type java-application
+$gedit build.gradle
+
+
+plugins {
+id 'application'
+id 'java'
+}
+application {
+mainClass = 'com.example.App'
+}
+repositories {
+mavenCentral()
+}
+dependencies {
+implementation 'org.apache.commons:commons-lang3:3.12.0'
+testImplementation 'junit:junit:4.13.2'
+}
+
+
+$mkdir -p src/main/java/com/example
+$gedit src/main/java/com/example/App.java
+$gradle build 
+$gradle run
