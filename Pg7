@@ -9,3 +9,4 @@
      apt:
        name: curl
        state: present
+ansible-playbook -i hosts.ini setup.yml --ask-become-pass
